@@ -11,6 +11,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -125,5 +126,10 @@ private DSL dsl;
 		
 		Assert.assertEquals("Cuidado onde clica, muitas armadilhas...", dsl.obterTextoNaPagina(By.className("facilAchar")));
 		
+	}
+	@Test
+	public void testJavascript() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("alert('Testando js via selenium')");
 	}
 }

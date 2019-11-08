@@ -60,7 +60,11 @@ public class TesteRegrasCadastro {
 	public static Collection<Object[]> getCollection(){
 		
 		return Arrays.asList(new Object[][] {
-			{"", "", "", Arrays.asList(), new String[] {},"Nome eh obrigatorio" }
+			{"", "", "", Arrays.asList(), new String[] {},"Nome eh obrigatorio" },
+			{"Glaiton", "", "", Arrays.asList(), new String [] {}, "Sobrenome eh obrigatorio"},
+			{"Glaiton", "Santos", "", Arrays.asList(), new String [] {}, "Sexo eh obrigatorio"},
+			{"Glaiton", "Santos", "Masculino", Arrays.asList("Carne", "Vegetariano"), new String[] {}, "Tem certeza que voce eh vegetariano?"},
+			{"Glaiton", "Santos", "Masculino", Arrays.asList("Carne"), new String[] {"Karate", "O que eh esporte?"}, "Voce faz esporte ou nao?"}
 		});
 		
 	}
@@ -72,8 +76,9 @@ public class TesteRegrasCadastro {
 		page.setMiddleName(middleName);
 		if(sexo.equals("Masculino")) {
 			page.setSexMale();
-		}else {
-			page.setSexMale();
+		}
+		if(sexo.equals("Feminino")) {
+			page.setSexFemale();
 		}
 		if(comidas.contains("Carne")) page.setFavoriteFoodCarne();
 		if(comidas.contains("Frango")) page.setFavoriteFoodFrango();
