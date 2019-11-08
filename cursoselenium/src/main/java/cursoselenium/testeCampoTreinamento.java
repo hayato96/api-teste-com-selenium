@@ -130,6 +130,7 @@ private DSL dsl;
 	@Test
 	public void testJavascript() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("alert('Testando js via selenium')");
+		//js.executeScript("alert('Testando js via selenium')");
+		js.executeScript("document.getElementById('elementosForm:nome').value = ('Escrito via JS')");
 	}
 }
