@@ -133,4 +133,11 @@ private DSL dsl;
 		//js.executeScript("alert('Testando js via selenium')");
 		js.executeScript("document.getElementById('elementosForm:nome').value = ('Escrito via JS')");
 	}
+	@Test
+	public void deveClicarBotaoTabela() {
+		
+		dsl.clicarBotaoTabela("Nome", "Maria", "Botao", "elementosForm:tableUsuarios");
+		
+	}
+
 }

@@ -1,5 +1,6 @@
 package cursoselenium;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CampoTreinamentoPage {
@@ -49,25 +50,31 @@ public class CampoTreinamentoPage {
 		dsl.deveClicarEmBotoes("elementosForm:cadastrar");
 	}
 	public String getCadastro() { 
-		return dsl.obterTexto("resultado");
+		return dsl.obterTextoNaPagina(By.xpath("//*[@id='resultado']/span"));
 	}
 	public String getNomeCadastro() {
-		return dsl.obterTexto("descNome");
+		//return dsl.obterTexto("descNome");
+		return dsl.obterTextoNaPagina(By.xpath("//*[@id='descNome']/span"));
 	}
 	public String getSobrenomeCadastro() {
-		return dsl.obterTexto("descSobrenome");
+		//return dsl.obterTexto("descSobrenome");
+		return dsl.obterTextoNaPagina(By.xpath("//*[@id='descSobrenome']/span"));
 	}
 	public String getSexoCadastro() {
-		return dsl.obterTexto("descSexo");
+		//return dsl.obterTexto("descSexo");
+		return dsl.obterTextoNaPagina(By.xpath("//*[@id='descSexo']/span"));
 	}
 	public String getComidaCadastro() {
-		return dsl.obterTexto("descComida");
+		//return dsl.obterTexto("descComida");
+		return dsl.obterTextoNaPagina(By.xpath("//*[@id='descComida']/span"));
 	}
 	public String getEscolaridadeCadastro() {
-		return dsl.obterTexto("descEscolaridade");
+		//return dsl.obterTexto("descEscolaridade");
+		return dsl.obterTextoNaPagina(By.xpath("//*[@id='descEscolaridade']/span"));
 	}
 	public String getEsportesCadastro() {
-		return dsl.obterTexto("descEsportes");
+		//return dsl.obterTexto("descEsportes");
+		return dsl.obterTextoNaPagina(By.xpath("//*[@id='descEsportes']/span"));
 	}
 	
 }
